@@ -13,6 +13,13 @@ import java.util.List;
 public class GenericEntityController {
     private List<GenericEntity> entityList = new ArrayList<>();
 
+    {
+        entityList.add(new GenericEntity(1l, "entity_1"));
+        entityList.add(new GenericEntity(2l, "entity_2"));
+        entityList.add(new GenericEntity(3l, "entity_3"));
+        entityList.add(new GenericEntity(4l, "entity_4"));
+    }
+
     @RequestMapping("/entity/all")
     public List<GenericEntity> findAll() {
         return entityList;
