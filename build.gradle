@@ -17,11 +17,16 @@ test {
     useJUnitPlatform()
 }
 
+configurations {
+    compile.exclude module: "spring-boot-starter-tomcat"
+}
+
 dependencies {
     
     // Spring boot
-    implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-actuator'
+    compile 'org.springframework.boot:spring-boot-starter-jetty'
+    compile('org.springframework.boot:spring-boot-starter-web') // tomcat is excluded earlier
 
     //////////////////////
     ///////testing////////
